@@ -384,7 +384,7 @@ class OrderView(APIView):
                     return Response({'Status': False, 'Errors': 'Неправильно указаны аргументы'})
                 else:
                     if is_updated:
-                        on_change_order_status(request.user.id, request.data['id'])
+                        #on_change_order_status(request.user.id, request.data['id'])
                         return Response({'Status': True})
                     else:
                         error_message = 'Сбой'                   
