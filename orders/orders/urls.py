@@ -22,6 +22,7 @@ from django_rest_passwordreset.views import reset_password_confirm, reset_passwo
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/register', RegisterUser.as_view()),
+    path('createuser', UserViewSet.as_view({'post': 'create'})),
     path('user/register/confirm', Сonfirmation.as_view()),
     path('user/login', LoginUser.as_view()),
     path('user/contact', ContactView.as_view()),

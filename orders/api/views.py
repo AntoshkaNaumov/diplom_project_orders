@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from django.db.models import Sum, Q, Prefetch
 from django.core.mail import EmailMessage
 from requests import get
-from rest_framework import status, generics
+from rest_framework import status, generics, viewsets
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.views import APIView
@@ -121,6 +121,11 @@ class DetailUser(APIView):
             else:
                 return Response(
                     {'status': False, 'Errors': 'Не указаны все арументы'})
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class ContactView(APIView):
