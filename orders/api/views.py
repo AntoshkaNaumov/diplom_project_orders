@@ -274,6 +274,10 @@ class ProductView(APIView):
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
+class ProductViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
 
 class CartView(APIView):
     """Класс корзины покупателей"""

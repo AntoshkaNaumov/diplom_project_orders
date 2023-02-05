@@ -20,6 +20,7 @@ from rest_framework import routers
 from django_rest_passwordreset.views import reset_password_confirm, reset_password_request_token
 router = routers.SimpleRouter()
 router.register(r'user', UserViewSet)
+router.register(r'product', ProductViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
